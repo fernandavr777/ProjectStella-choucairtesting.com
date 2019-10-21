@@ -1,0 +1,56 @@
+package com.qualitystream.tutorial;
+
+import static org.junit.Assert.*;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class choucair {
+	
+	
+		
+		private WebDriver driver;
+		
+		By registerLinkLocator = By.linkText("Servicios");
+		By registerLinkLocator1 = By.linkText("Capacidades");
+		
+		
+		@Before
+		public void setUp() {
+			System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
+			driver = new ChromeDriver();
+			//Maximizar la ventana
+			driver.manage().window().maximize();
+			driver.get("https://www.choucairtesting.com");
+		}
+	    
+		
+		//Pasos para ejecutar la prueba
+		
+	@Test
+		public void testGooglePage()throws InterruptedException {
+		
+		driver.findElement(registerLinkLocator).click();
+		Thread.sleep(2000);
+			
+		driver.findElement(registerLinkLocator1).click();
+		Thread.sleep(2000);
+			        
+		}
+		
+		
+		@After
+		public void tearDown() {
+			//driver.quit();
+		}
+		
+}
+
+		

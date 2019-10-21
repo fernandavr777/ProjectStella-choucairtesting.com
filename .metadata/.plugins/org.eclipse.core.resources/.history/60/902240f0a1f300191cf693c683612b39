@@ -1,0 +1,86 @@
+package com.qualitystream.tutorial;
+
+import static org.junit.Assert.*;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class choucair {
+	
+	
+		
+		private WebDriver driver;
+		
+		By registerLinkLocator = By.linkText("Servicios");
+		By registerPageCapacidades= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/10/investigacion.png']");
+		By registerLinkCapacidades = By.linkText("Capacidades");
+		
+		By registerPageHacemos= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/10/mision.png']");
+		By registerLinkHacemos = By.linkText("Cómo lo hacemos");
+		
+		By registerPagePortafolio = By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/10/presentacion.png']");
+		By registerLinkPortafolio  = By.linkText("Portafolio de Soluciones");
+		
+		@Before
+		public void setUp() {
+			System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
+			driver = new ChromeDriver();
+			//Maximizar la ventana
+			driver.manage().window().maximize();
+			driver.get("https://www.choucairtesting.com");
+		}
+	    
+		
+		//Pasos para ejecutar la prueba
+		
+		
+		//Caso 1
+	@Test
+		public void testCapacidadesPage()throws InterruptedException {
+		
+		driver.findElement(registerLinkLocator).click();
+		
+			
+		if(driver.findElement(registerPageCapacidades).isDisplayed()) {
+			Thread.sleep(2000);
+			driver.findElement(registerLinkCapacidades).click();
+			Thread.sleep(2000);
+			
+		}
+		
+		driver.findElement(registerLinkLocator).click();
+		
+		if(driver.findElement(registerPageHacemos).isDisplayed()) {
+			Thread.sleep(2000);
+			driver.findElement(registerLinkHacemos).click();
+			Thread.sleep(2000);
+			
+		}
+		
+		driver.findElement(registerLinkLocator).click();
+		
+		if(driver.findElement(registerPagePortafolio).isDisplayed()) {
+			Thread.sleep(2000);
+			driver.findElement(registerLinkPortafolio).click();
+			Thread.sleep(2000);
+		}
+		
+			        
+		}
+		
+		
+		@After
+		public void tearDown() {
+			driver.quit();
+		}
+		
+}
+
+		

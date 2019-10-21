@@ -1,0 +1,319 @@
+package com.qualitystream.tutorial;
+
+import static org.junit.Assert.*;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class choucair {
+	
+	
+		
+		private WebDriver driver;
+		
+		By registerLinkLocator = By.linkText("Servicios");
+		By registerPageCapacidades= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/10/investigacion.png']");
+		By registerLinkCapacidades = By.linkText("Capacidades");
+		
+		By registerPageHacemos= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/10/mision.png']");
+		By registerLinkHacemos = By.linkText("Cómo lo hacemos");
+		
+		By registerPagePortafolio = By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/10/presentacion.png']");
+		By registerLinkPortafolio  = By.linkText("Portafolio de Soluciones");
+		
+		//Portafolio
+		
+		By registerPageDigital= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/DPM.png']");
+		By registerLinkDigital = By.linkText("Digital Performance Management");
+		
+		By registerPagePruebas= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Moviles.png']");
+		By registerLinkPruebas = By.linkText("Pruebas Móviles");
+		
+		By registerPageBI= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/BI.png']");
+		By registerLinkBI = By.linkText("Business Intellingence");
+		
+		By registerPageUsabilidad= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Usabilidad.png']");
+		By registerLinkUsabilidad = By.linkText("Pruebas de Usabilidad");
+		
+		By registerPageContables= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/AFT.png']");
+		By registerLinkContables = By.linkText("Pruebas Contables y Financieras");
+		
+		By registerPageDesempeño= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Performance.png']");
+		By registerLinkDesempeño = By.linkText("Pruebas de Desempeño");
+		
+		By registerPageMigración= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Migracion.png']");
+		By registerLinkMigración = By.linkText("Pruebas de Migración");
+		
+		By registerPageGeneralistas= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Generalista-1.png']");
+		By registerLinkGeneralistas = By.linkText("Pruebas Generalistas");
+		
+		By registerPageSAP= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/SAP.png']");
+		By registerLinkSAP = By.linkText("Automatización de Pruebas SAP");
+		
+		By registerPageAutomatización= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Automatizacion.png']");
+		By registerLinkAutomatización = By.linkText("Automatización de Pruebas");
+		
+		By registerPageAmbientes= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Ambientes.png']");
+		By registerLinkAmbientes = By.linkText("Ambientes de Prueba");
+		
+		By registerPageSwitches = By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Switch.png']");
+		By registerLinkSwitches  = By.linkText("Switches Transaccionales");
+		
+		By registerPageNómina= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/nomina.png']");
+		By registerLinkNómina = By.linkText("Pruebas de Nómina");
+		
+		By registerPageSeguridad= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Seguridad.png']");
+		By registerLinkSeguridad = By.linkText("Pruebas de Seguridad");
+		
+		By registerPageAlta= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Alta-auto.png']");
+		By registerLinkAlta = By.linkText("Alta automatización");
+		
+		By registerPageCursos= By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/09/Cursos.png']");
+		By registerLinkCursos = By.linkText("Cursos y Certificaciones");
+		By registerBtnLocator = By.name("Leer Más");
+		
+		
+		
+		
+		@Before
+		public void setUp() {
+			System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
+			driver = new ChromeDriver();
+			//Maximizar la ventana
+			driver.manage().window().maximize();
+			driver.get("https://www.choucairtesting.com");
+		}
+	    
+		
+		//Pasos para ejecutar la prueba
+		
+		
+		//Caso 1
+	@Test
+		public void testCapacidadesPage()throws InterruptedException {
+		
+		driver.findElement(registerLinkLocator).click();
+		
+			
+		if(driver.findElement(registerPageCapacidades).isDisplayed()) {
+			Thread.sleep(2000);
+			driver.findElement(registerLinkCapacidades).click();
+			Thread.sleep(2000);
+			
+		}
+		
+		driver.findElement(registerLinkLocator).click();
+		
+		if(driver.findElement(registerPageHacemos).isDisplayed()) {
+			Thread.sleep(2000);
+			driver.findElement(registerLinkHacemos).click();
+			Thread.sleep(2000);
+			
+		}
+		
+		driver.findElement(registerLinkLocator).click();
+		
+		if(driver.findElement(registerPagePortafolio).isDisplayed()) {
+			Thread.sleep(2000);
+			driver.findElement(registerLinkPortafolio).click();
+			Thread.sleep(2000);
+		}
+		
+			        
+		//Portafolio
+	    //Digital Performance Management
+		driver.findElement(registerLinkLocator).click();
+	   
+	if(driver.findElement(registerPageDigital).isDisplayed()) {
+		Thread.sleep(2000);
+		driver.findElement(registerLinkDigital).click();
+		Thread.sleep(2000);
+	}
+		//Pruebas Moviles
+	driver.findElement(registerLinkLocator).click();
+	
+		if(driver.findElement(registerPagePruebas).isDisplayed()) {
+			Thread.sleep(2000);
+			driver.findElement(registerLinkPruebas).click();
+			Thread.sleep(2000);
+		}
+		
+		//Bussines Intelligente
+		
+		driver.findElement(registerLinkLocator).click();
+			
+			if(driver.findElement(registerPageBI).isDisplayed()) {
+				Thread.sleep(2000);
+				driver.findElement(registerLinkBI).click();
+				Thread.sleep(2000);
+				
+			}
+			
+			//Pruebas de Usabilidad
+			
+			driver.findElement(registerLinkLocator).click();
+			
+				if(driver.findElement(registerPageUsabilidad).isDisplayed()) {
+					Thread.sleep(2000);
+					driver.findElement(registerLinkUsabilidad).click();
+					Thread.sleep(2000);
+					
+				}
+				
+				//Pruebas Contables y Financieras
+				
+				driver.findElement(registerLinkLocator).click();
+				
+					if(driver.findElement(registerPageContables).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkContables).click();
+						Thread.sleep(2000);
+	
+					}
+			    //Pruebas de Desempeño	
+					
+					driver.findElement(registerLinkLocator).click();
+					
+					if(driver.findElement(registerPageDesempeño).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkDesempeño).click();
+						Thread.sleep(2000);
+	
+					}
+					//Pruebas de Migración
+					
+					driver.findElement(registerLinkLocator).click();
+					
+					if(driver.findElement(registerPageMigración).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkMigración).click();
+						Thread.sleep(2000);
+	
+					}
+					
+					//Pruebas Generalistas
+					
+					driver.findElement(registerLinkLocator).click();
+					
+					
+					if(driver.findElement(registerPageGeneralistas).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkGeneralistas).click();
+						Thread.sleep(2000);
+	       
+					}
+					//Automatización de Pruebas SAP
+					
+					driver.findElement(registerLinkLocator).click();
+					
+					if(driver.findElement(registerPageSAP).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkSAP).click();
+						Thread.sleep(2000);
+	
+					}
+					
+					//Automatización de Pruebas
+					
+					driver.findElement(registerLinkLocator).click();
+					
+  					if(driver.findElement(registerPageAutomatización).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkAutomatización).click();
+						Thread.sleep(2000);
+	
+					}
+  					
+					//Ambientes de Prueba
+  					
+  					driver.findElement(registerLinkLocator).click();
+  					
+					if(driver.findElement(registerPageAmbientes).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkAmbientes).click();
+						Thread.sleep(2000);
+	
+					}
+					
+					//Switches Transacciona
+					
+					driver.findElement(registerLinkLocator).click();
+					
+					if(driver.findElement(registerPageSwitches).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkSwitches).click();
+						Thread.sleep(2000);
+	
+					}
+					
+					//Pruebas de Nómina
+					
+					driver.findElement(registerLinkLocator).click();
+					
+					
+					if(driver.findElement(registerPageNómina).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkNómina).click();
+						Thread.sleep(2000);
+	
+					}
+					
+					//Pruebas de seguridad
+					
+					driver.findElement(registerLinkLocator).click();
+					
+					if(driver.findElement(registerPageSeguridad).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkSeguridad).click();
+						Thread.sleep(2000);
+	
+					}
+					
+					//Alta automatización
+					
+					driver.findElement(registerLinkLocator).click();
+					
+					if(driver.findElement(registerPageAlta).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkAlta).click();
+						Thread.sleep(2000);
+	
+					}
+					
+					//Cursos y Certificaciones
+					
+					driver.findElement(registerLinkLocator).click();
+
+					if(driver.findElement(registerPageCursos).isDisplayed()) {
+						Thread.sleep(2000);
+						driver.findElement(registerLinkCursos).click();
+						Thread.sleep(2000);
+						driver.findElement(registerBtnLocator).click();
+	
+					}else {
+						System.out.print("Registrer page was not found");
+					}
+					
+					
+					
+					
+					
+					
+	}
+		
+		
+		@After
+		public void tearDown() {
+			driver.quit();
+		}
+		
+}
+
+		
